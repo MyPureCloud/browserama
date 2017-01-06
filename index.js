@@ -2,15 +2,15 @@
 // http://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser
 const isNotBrowser = (typeof window === 'undefined');
 
-let isFirefox = false,
-  isChromeOrChromium = false,
-  isChrome = false,
-  isChromium = false,
-  isSafari = false,
-  isOpera = false,
-  isEdge = false,
-  isBlink = false,
-  isIE = false;
+let isFirefox = false;
+let isChromeOrChromium = false;
+let isChrome = false;
+let isChromium = false;
+let isSafari = false;
+let isOpera = false;
+let isEdge = false;
+let isBlink = false;
+let isIE = false;
 
 if (!isNotBrowser) {
   isFirefox = typeof InstallTrigger !== 'undefined';
