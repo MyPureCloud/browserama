@@ -2,7 +2,7 @@
   "name": "browserama",
   "version": "1.0.0",
   "description": "A browser detection package that uses feature detection instead of user agent",
-  "main": "index.js",
+  "main": "out/browserama.min.js",
   "scripts": {
     "lint": "semistandard",
     "build": "rollup --config rollup.config.js",
