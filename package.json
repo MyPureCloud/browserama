@@ -1,0 +1,35 @@
+{
+  "name": "browserama",
+  "version": "1.0.0",
+  "description": "A browser detection package that uses feature detection instead of user agent",
+  "main": "index.js",
+  "scripts": {
+    "lint": "semistandard",
+    "build": "rollup --config rollup.config.js",
+    "prepublish": "npm run build && npm run test",
+    "_test": "echo \"The linter passed, but since tests need to run in a browser, run npm run test-server to test manually",
+    "test-server": "open http://localhost:8080/test && stupid-server",
+    "test": "npm run lint && npm run _test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mypurecloud/browserama.git"
+  },
+  "keywords": [
+    "browser",
+    "detect",
+    "detection"
+  ],
+  "author": "Xander Dumaine <xander.dumaine@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mypurecloud/browserama/issues"
+  },
+  "homepage": "https://github.com/mypurecloud/browserama#readme",
+  "devDependencies": {
+    "rollup": "^0.40.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-uglify": "^1.0.1",
+    "semistandard": "^9.2.1"
+  }
+}
