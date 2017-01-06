@@ -1,14 +1,28 @@
 // Use Feature detection instead of user agents -
 // http://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser
-const isFirefox = typeof InstallTrigger !== 'undefined';
-const isChromeOrChromium = !!window.chrome;
-const isChrome = !!window.chrome && !!window.chrome.webstore;
-const isChromium = isChromeOrChromium && !window.chrome.webstore;
-const isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || (window.safari && window.safari.pushNotification);
-const isOpera = (!!window.opr && !!window.opr.addons) || !!window.opera;
-const isEdge = !!window.StyleMedia;
-const isBlink = (isChrome || isOpera) && !!window.CSS;
-const isIE = !isChromeOrChromium && !isSafari && !isFirefox && !isOpera && !!document.documentMode;
+const isNotBrowser = (typeof window === 'undefined');
+
+let isFirefox = false,
+  isChromeOrChromium = false,
+  isChrome = false,
+  isChromium = false,
+  isSafari = false,
+  isOpera = false,
+  isEdge = false,
+  isBlink = false,
+  isIE = false;
+
+if (!isNotBrowser) {
+  isFirefox = typeof InstallTrigger !== 'undefined';
+  isChromeOrChromium = !!window.chrome;
+  isChrome = !!window.chrome && !!window.chrome.webstore;
+  isChromium = isChromeOrChromium && !window.chrome.webstore;
+  isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || (window.safari && window.safari.pushNotification);
+  isOpera = (!!window.opr && !!window.opr.addons) || !!window.opera;
+  isEdge = !!window.StyleMedia;
+  isBlink = (isChrome || isOpera) && !!window.CSS;
+  isIE = !isChromeOrChromium && !isSafari && !isFirefox && !isOpera && !!document.documentMode;
+}
 
 export default {
   get isChrome () {

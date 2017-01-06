@@ -7,7 +7,7 @@
     "lint": "semistandard",
     "build": "rollup --config rollup.config.js",
     "prepublish": "npm run build && npm run test",
-    "_test": "echo \"The linter passed, but since tests need to run in a browser, run npm run test-server to test manually",
+    "_test": "echo \"The linter passed, but since tests need to run in a browser, run npm run test-server to test manually\"",
     "test-server": "open http://localhost:8080/test && stupid-server",
     "test": "npm run lint && npm run _test"
   },
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/mypurecloud/browserama#readme",
   "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
     "rollup": "^0.40.2",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-uglify": "^1.0.1",
