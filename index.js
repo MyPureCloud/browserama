@@ -45,6 +45,10 @@ export default {
     return isSafari;
   },
 
+  get isOpera () {
+    return isOpera;
+  },
+
   get isEdge () {
     return isEdge;
   },

@@ -7,29 +7,17 @@
         Open this page in other browsers to verify detection accuracy.
     </p>
     <script type="application/javascript">
-        function getBrowser() {
-            if (browserama.isChrome) {
-                return "Chrome"
+        function getProperties () {
+          var list = '';
+          for (var key in browserama) {
+            if (browserama.hasOwnProperty(key)) {
+              var value = browserama[key] ? 'Yes' : 'No';
+              list += '<li><code>'+key+'</code>: '+value+'</li>';
             }
-            if (browserama.isFirefox) {
-                return 'Firefox';
-            }
-            if (browserama.isChromium) {
-                return 'Chromium';
-            }
-            if (browserama.isSafari) {
-                return 'Safari';
-            }
-            if (browserama.isIE) {
-                return 'IE';
-            }
-            if (browserama.isEdge) {
-                return 'Edge';
-            }
-            if (browserama.isOpera) {
-                return 'Opera';
-            }
+          }
+          return '<ul>'+list+'</ul>';
         }
-        document.write('This browser is ' + getBrowser());
+
+        document.write('This browser is: ' + getProperties());
     </script>
 </body>
