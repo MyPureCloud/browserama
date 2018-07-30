@@ -3,5 +3,6 @@
 # dependencies
 /node_modules
 coverage
+out
 
 # misc

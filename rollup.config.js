@@ -2,9 +2,11 @@ import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
-  entry: 'index.js',
-  format: 'umd',
+  input: 'index.js',
   plugins: [ babel(), uglify() ],
-  dest: 'out/browserama.min.js',
-  moduleName: 'browserama'
+  output: {
+    file: 'out/browserama.min.js',
+    name: 'browserama',
+    format: 'umd'
+  }
 };
