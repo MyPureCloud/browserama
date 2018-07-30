@@ -1,6 +1,6 @@
 {
   "name": "browserama",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A browser detection package that uses feature detection instead of user agent",
   "main": "out/browserama.min.js",
   "files": [
