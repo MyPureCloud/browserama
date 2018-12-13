@@ -15,7 +15,7 @@ let isIE = false;
 if (!isNotBrowser) {
   isFirefox = typeof InstallTrigger !== 'undefined';
   isChromeOrChromium = !!window.chrome;
-  isChrome = !!window.chrome && !!window.chrome.webstore;
+  isChrome = !!window.chrome && !!window.navigator && !!window.navigator.plugins && !!window.navigator.plugins.namedItem('Chrome PDF Plugin');
   isChromium = isChromeOrChromium && !window.chrome.webstore;
   isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || (window.safari && window.safari.pushNotification);
   isOpera = (!!window.opr && !!window.opr.addons) || !!window.opera;
