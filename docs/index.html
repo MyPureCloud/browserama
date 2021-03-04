@@ -1,36 +1,41 @@
 <html>
+
 <head>
-    <script src="browserama.min.js"></script>
+  <script src="browserama.min.js"></script>
 </head>
+
 <body>
-    <p>
-        Open this page in other browsers to verify detection accuracy.
-        Fork me on github: <a href="https://github.com/mypurecloud/browserama">Browserama</a>
-    </p>
-    <script type="application/javascript">
-        function getBrowser() {
-            if (browserama.isChrome) {
-                return "Chrome"
-            }
-            if (browserama.isFirefox) {
-                return 'Firefox';
-            }
-            if (browserama.isChromium) {
-                return 'Chromium';
-            }
-            if (browserama.isSafari) {
-                return 'Safari';
-            }
-            if (browserama.isIE) {
-                return 'IE';
-            }
-            if (browserama.isEdge) {
-                return 'Edge';
-            }
-            if (browserama.isOpera) {
-                return 'Opera';
-            }
-        }
-        document.write('This browser is ' + getBrowser());
-    </script>
+  <p>
+    Open this page in other browsers to verify detection accuracy.
+    Fork me on github: <a href="https://github.com/mypurecloud/browserama">Browserama</a>
+  </p>
+  <script type="application/javascript">
+    function getBrowser() {
+      if (browserama.isChrome) {
+        return "Chrome"
+      }
+      if (browserama.isFirefox) {
+        return 'Firefox';
+      }
+      if (browserama.isChromium) {
+        return 'Chromium';
+      }
+      if (browserama.isSafari) {
+        return 'Safari';
+      }
+      if (browserama.isIE) {
+        return 'IE';
+      }
+      if (browserama.isEdgeChromium) {
+        return 'Edge (chromium)';
+      }
+      if (browserama.isEdge) {
+        return 'Edge';
+      }
+      if (browserama.isOpera) {
+        return 'Opera';
+      }
+    }
+    document.write('This browser is ' + getBrowser());
+  </script>
 </body>
