@@ -2,7 +2,7 @@
 
 webappPipeline {
     slaveLabel = 'dev_v2'
-    nodeVersion = '10.16.2'
+    nodeVersion = '14.8.0'
     useArtifactoryRepo = false
     projectName = 'browserama'
     manifest = directoryManifest('out')
