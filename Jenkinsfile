@@ -1,4 +1,4 @@
-@Library('pipeline-library') _
+@Library('pipeline-library@COMUI-433_web-app-deploy-6') _
 
 webappPipeline {
     slaveLabel = 'dev_v2'
