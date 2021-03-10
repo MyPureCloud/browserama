@@ -9,6 +9,7 @@ let isChromium = false;
 let isSafari = false;
 let isOpera = false;
 let isEdge = false;
+let isEdgeChromium = false;
 let isBlink = false;
 let isIE = false;
 
@@ -20,6 +21,7 @@ if (!isNotBrowser) {
   isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || (window.safari && window.safari.pushNotification);
   isOpera = (!!window.opr && !!window.opr.addons) || !!window.opera;
   isEdge = !!window.StyleMedia;
+  isEdgeChromium = isChromeOrChromium && !!navigator.userAgent.match(/edg/i);
   isBlink = (isChrome || isOpera) && !!window.CSS;
   isIE = !isChromeOrChromium && !isSafari && !isFirefox && !isOpera && !!document.documentMode;
 }
@@ -51,6 +53,10 @@ export default {
 
   get isEdge () {
     return isEdge;
+  },
+
+  get isEdgeChromium () {
+    return isEdgeChromium;
   },
 
   get isIE () {

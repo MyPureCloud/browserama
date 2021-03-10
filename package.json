@@ -1,15 +1,18 @@
 {
   "name": "browserama",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "A browser detection package that uses feature detection instead of user agent",
   "main": "out/browserama.min.js",
   "files": [
     "index.js",
     "out"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "lint": "semistandard",
-    "build": "rollup --config rollup.config.js",
+    "build": "rollup --config rollup.config.js && node copy-files.js",
     "prepublish": "npm run build && npm run test",
     "_test": "echo \"The linter passed, but since tests need to run in a browser, run npm run test-server to test manually\"",
     "test-server": "open http://localhost:8080/test && stupid-server",
