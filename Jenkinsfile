@@ -1,4 +1,4 @@
-@Library('pipeline-library@COMUI-433_web-app-deploy-6') _
+@Library('pipeline-library@post-release-step-creds-for-github') _
 
 webappPipeline {
     slaveLabel = 'dev_v2'
@@ -28,14 +28,5 @@ webappPipeline {
         ]
     }
 
-    shouldTagOnRelease = { false }
-
-    postReleaseStep = {
-        sshagent(credentials: [constants.credentials.github.inin_dev_evangelists]) {
-            sh("""
-                git tag v${version}
-                git push origin --tags
-            """)
-        }
-    }
+    shouldTagOnRelease = { true }
 }
