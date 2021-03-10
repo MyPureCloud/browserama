@@ -8,7 +8,7 @@ webappPipeline {
     manifest = directoryManifest('out')
     buildType = { env.BRANCH_NAME == 'master' ? 'MAINLINE' : 'FEATURE' }
     publishPackage = { 'prod' }
-    testJob = 'no-tests'
+    testJob = null
 
     buildStep = {
         sh('npm ci && npm test && npm run build')
