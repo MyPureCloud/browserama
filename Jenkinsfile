@@ -1,4 +1,4 @@
-@Library('pipeline-library@post-release-step-creds-for-github') _
+@Library('pipeline-library') _
 
 webappPipeline {
     slaveLabel = 'dev_v2'
@@ -24,7 +24,8 @@ webappPipeline {
         return [
             managerEmail: 'purecloud-client-media@genesys.com',
             rollbackPlan: 'Patch version with fix',
-            testResults: 'no-tests'
+            testResults: 'no-tests',
+            qaId: '5d41d9195ca9700dac0ef53a'
         ]
     }
 
